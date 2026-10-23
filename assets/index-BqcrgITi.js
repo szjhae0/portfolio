@@ -22,7 +22,20 @@ Error generating stack: `+e.message+`
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; color-scheme: light; background: var(--paper); }
+
+html, body, #root {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+  text-align: left;
+  display: block;
+  place-items: initial;
+}
 
 body {
   background: var(--paper);
@@ -30,13 +43,16 @@ body {
   font-family: "DM Sans", system-ui, sans-serif;
   font-size: 17px;
   line-height: 1.6;
+  min-width: 0;
 }
+
+h1, h2, h3, p, li, span, strong { color: inherit; }
 
 a { color: inherit; }
 
 :focus-visible { outline: 3px solid var(--violet); outline-offset: 3px; }
 
-.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+.wrap { width: 100%; max-width: none; margin: 0; padding: 0 clamp(16px, 2.5vw, 32px); }
 
 .nav {
   display: flex;
@@ -78,6 +94,7 @@ a { color: inherit; }
 .h-br { bottom: -7px; right: -7px; }
 
 .hero h1 {
+  color: var(--ink);
   font-family: "Bricolage Grotesque", sans-serif;
   font-weight: 700;
   font-size: clamp(38px, 7vw, 76px);
